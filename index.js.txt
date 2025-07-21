@@ -1,0 +1,14 @@
+const keyword = "ALERT" // Chat keyword to trigger the action
+const keyBind = KeyBind.getKeyBind("key.forward") // Minecraft keybind (e.g. "W")
+
+let holdTicks = 20 // Hold key for 1 second (20 ticks)
+
+register("chat", (message) => {
+    if (message.includes(keyword)) {
+        ChatLib.chat(`§a[AutoKey] Trigger word "${keyword}" detected!`)
+        keyBind.setState(true)
+        setTimeout(() => {
+            keyBind.setState(false)
+        }, holdTicks * 50)
+    }
+}).setChatCriteria("${message}")

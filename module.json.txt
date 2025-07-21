@@ -1,0 +1,6 @@
+{
+  "name": "AutoKey",
+  "creator": "Mavets",
+  "version": "1.0.0",
+  "description": "Triggers a Minecraft keybind when a keyword is seen in chat"
+}
